@@ -243,6 +243,20 @@ h1 {
 	font-size: 0.9rem;
 }
 
+/* The footer uses Intel blue to create a clear ending for the page. */
+.site-footer {
+	padding: 16px 24px;
+	color: var(--white);
+	text-align: center;
+	background: var(--intel-blue);
+}
+
+.site-footer p {
+	margin: 0;
+	font-family: "Inter", Arial, sans-serif;
+	font-size: 0.9rem;
+}
+
 @media (max-width: 700px) {
 	.hero {
 		min-height: 420px;
@@ -286,18 +300,45 @@ h1 {
 
 	.timeline-card {
 		width: 100%;
-		min-height: 0;
+		min-height: 620px;
 		margin-bottom: 28px;
-		overflow: visible;
+		overflow: hidden;
 	}
 
 	.milestone-details {
-		overflow: visible;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
 	}
 
 	.milestone-details img {
-		height: 240px;
+		height: 320px;
 		object-position: center;
+		object-fit: contain;
+	}
+
+	.milestone-details p {
+		position: static;
+		display: block;
+		padding: 18px;
+		color: var(--ink);
+		background: var(--white);
+		text-shadow: none;
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.milestone-details::after {
+		display: none;
+	}
+
+	.timeline-card:hover {
+		transform: none;
+	}
+
+	.timeline-card:hover .milestone-details img {
+		transform: none;
+		filter: none;
 	}
 }
 
